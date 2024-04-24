@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Sriracha";
+    src: local("Sriracha"),
+     url(/fonts/Sriracha-Regular.ttf) format("ttf");
+}
+
+html {
+    font-family: "Sriracha";
+}
