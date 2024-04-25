@@ -1,18 +1,27 @@
 <script setup lang="ts">
-import { useAuth, useRoute, useFetch, useRequestHeaders } from '#imports'
+  import { useAuth, useRoute, useFetch, useRequestHeaders } from '#imports'
 
-const { data, status, lastRefreshedAt, getCsrfToken, getProviders, signIn, signOut, getSession } = useAuth()
+  const { data, status, lastRefreshedAt, getCsrfToken, getProviders, signIn, signOut, getSession } = useAuth()
 
-const providers = await getProviders()
-const csrfToken = await getCsrfToken()
+  const providers = await getProviders()
+  const csrfToken = await getCsrfToken()
 
-const headers = useRequestHeaders(['cookie']) as HeadersInit
-const { data: token } = await useFetch('/api/token', { headers })
+  const headers = useRequestHeaders(['cookie']) as HeadersInit
+  const { data: token } = await useFetch('/api/token', { headers })
 
-const route = useRoute()
+  const route = useRoute()
 </script>
 
 <template>
+  <div>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
+</template>
+
+
+<!-- <template>
   <div>
     <h3>Authentication Overview</h3>
     <p>
@@ -68,4 +77,4 @@ const route = useRoute()
     <p>The page content of "{{ route.path }}"</p>
     <NuxtPage />
   </div>
-</template>
+</template> -->
