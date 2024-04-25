@@ -6,7 +6,7 @@ import { NuxtAuthHandler } from '#auth'
 // const prisma = new PrismaClient();
 
 export default NuxtAuthHandler({
-    secret: useRuntimeConfig().authSecret,
+    secret: useRuntimeConfig().AUTH_SECRET,
 
     pages:{
         signIn: "/login",
